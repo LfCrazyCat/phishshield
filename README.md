@@ -1,5 +1,63 @@
 # Welcome to your Expo app 👋
 
+# 🛡️ PhishShield
+
+PhishShield er en **opplæringsapp for cybersikkerhet**, utviklet for å lære brukere å oppdage og forstå phishing-angrep gjennom realistiske scenarioer.  
+Appen kombinerer **spillbasert læring**, **AI-genererte spørsmål**, og **intuitivt design** bygget med React Native og Expo.
+
+---
+
+## 🚀 Funksjoner
+
+✅ **AI-genererte spørsmål**  
+Bruker LM Studio og LLaMA-modellen til å oversette og generere treningsdata direkte fra JSON-filer.  
+
+✅ **Interaktive scenarioer**  
+Lær å identifisere svindel i e-poster, meldinger og sosiale medier.  
+
+✅ **Flerspråklig støtte (NO/EN)**  
+All tekst oversettes automatisk ved hjelp av lokal LLM-integrasjon.  
+
+✅ **Modulbasert oppbygning**  
+Organisert i kategorier som:
+- Avsender
+- Lenker
+- Økonomi
+- Kjærlighet
+- Passord & 2FA  
+
+✅ **Visuelt rent design**  
+Bygget med komponenter og ikoner for høy lesbarhet og rask navigasjon.
+
+---
+
+## 🧠 Teknologi og verktøy
+
+| Komponent | Beskrivelse |
+|------------|-------------|
+| **Expo** | Plattform for React Native-utvikling |
+| **React Native** | Rammeverk for mobilapplikasjonen |
+| **LM Studio + LLaMA 3.2 3B** | Lokal AI-modell brukt for oversettelse og datagenerering |
+| **Node.js & npm** | Bygging og skriptkjøring |
+| **JavaScript / TypeScript** | Hovedspråk for koden |
+| **JSON-filer** | Datastruktur for spørsmål og AI-treningsdata |
+
+---
+
+## ⚙️ Installasjon
+
+### 1️⃣ Klon prosjektet fra GitHub
+```bash
+git clone https://github.com/<brukernavn>/phishshield.git
+cd phishshield
+
+
+
+
+
+
+
+
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
 ## Get started
