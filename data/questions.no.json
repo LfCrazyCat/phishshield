@@ -1,0 +1,91 @@
+{
+  "avsender": [
+    {
+      "id": "intro_avsender",
+      "prompt": "✉️ Avsender — lær å gjenkjenne falske e-poster og meldinger.",
+      "why": "Sjekk alltid avsenderadresse og domene nøye før du klikker på lenker eller svarer."
+    },
+    { "id": "avs_1", "prompt": "SMS fra «Skatteetaten» om skattepenger – avsender er ukjent mobilnummer.", "isPhish": true, "why": "Offentlige etater sender sjelden lenker fra tilfeldige numre." },
+    { "id": "avs_2", "prompt": "E-post fra banken, men avsender er support@bank-login123.com.", "isPhish": true, "why": "Falskt domene (bank-login123.com)." },
+    { "id": "avs_3", "prompt": "E-post fra din IT-avdeling (it@dittfirma.no) via kjent intern kanal.", "isPhish": false, "why": "Kjent avsender og forventet kanal." },
+    { "id": "avs_4", "prompt": "SMS fra Posten med pakkevarsel – avsendernavn «Posten» men nummeret er utenlandsk.", "isPhish": true, "why": "Spoofet navn; mistenkelig utlandsnummer." },
+    { "id": "avs_5", "prompt": "Kalenderinvitasjon fra kollega du jobber med daglig.", "isPhish": false, "why": "Forventet samarbeid, normal kanal." },
+    { "id": "avs_6", "prompt": "E-post fra HR, men stavet «HHR» i avsendernavn.", "isPhish": true, "why": "Små stavefeil i avsendernavn er rødt flagg." },
+    { "id": "avs_7", "prompt": "Melding i Teams fra sjefen om å bli med i et raskt møte.", "isPhish": false, "why": "Intern kanal og plausibelt innhold." },
+    { "id": "avs_8", "prompt": "E-post fra «Microsoft Support» men domene er microsofft.help", "isPhish": true, "why": "Etterligner kjent merke med falskt domene." },
+    { "id": "avs_9", "prompt": "Varsel fra bankens mobilapp (push) om ny melding i nettbanken.", "isPhish": false, "why": "Push fra offisiell app med innlogging." },
+    { "id": "avs_10", "prompt": "E-post fra «Økonomi» uten signatur eller kontaktinfo.", "isPhish": true, "why": "Mangler identifiserbar avsender og metadata." }
+  ],
+
+  "lenker": [
+    {
+      "id": "intro_lenker",
+      "prompt": "🔗 Lenker — lær å avsløre falske URL-adresser og luredomener.",
+      "why": "Se alltid nøye på adressen før du klikker. Falske lenker etterligner ekte nettsteder for å stjele informasjon."
+    },
+    { "id": "lnk_1", "prompt": "Lenke i melding til http://vipps-no-login.secureupdate.com", "isPhish": true, "why": "Feil toppdomene — ikke vipps.no." },
+    { "id": "lnk_2", "prompt": "SharePoint-lenke til https://contoso.sharepoint.com/sites/TeamA/… sendt av kollega.", "isPhish": false, "why": "Ser legitimt ut for bedriftens SharePoint." },
+    { "id": "lnk_3", "prompt": "Messenger: «Se denne videoen av deg!» med kortlenke.", "isPhish": true, "why": "Sosial manipulering + uklar lenke." },
+    { "id": "lnk_4", "prompt": "E-postlenke peker til domene som ligner: bankn0.no (null i stedet for o).", "isPhish": true, "why": "Homoglyph/typo-squatting." },
+    { "id": "lnk_5", "prompt": "QR-kode i intern plakat til intranett: https://intra.dittfirma.no", "isPhish": false, "why": "Internt domene du kjenner." },
+    { "id": "lnk_6", "prompt": "Lenke med uvanlige parametere: https://tjeneste.no/login?session=base64…", "isPhish": true, "why": "Skjuler formål; typisk til kapring." },
+    { "id": "lnk_7", "prompt": "Direkte lenke til App Store/Google Play fra offisiell nettside.", "isPhish": false, "why": "Peker til legitime app-butikker." },
+    { "id": "lnk_8", "prompt": "Lenketekst viser riktig domene, men egentlig peker URL til et annet.", "isPhish": true, "why": "Forfalsket lenketekst (hover avslører)." },
+    { "id": "lnk_9", "prompt": "Lenke til https://nav.no i e-post fra @nav.no-adresse.", "isPhish": false, "why": "Korrekt domene og avsender." },
+    { "id": "lnk_10", "prompt": "PDF med «Logg inn»-knapp som åpner ukjent nettside.", "isPhish": true, "why": "Vedlegg som leder til påloggingsfalskneri." }
+  ],
+
+  "okonomi": [
+    {
+      "id": "intro_okonomi",
+      "prompt": "💰 Økonomi — lær å avsløre falske betalinger og pengekrav.",
+      "why": "Vær skeptisk til uventede betalinger, gebyrer eller tilbud som virker for gode til å være sanne."
+    },
+    { "id": "eco_1", "prompt": "«Du har vunnet 1 million», betal 500 kr i gebyr for å få gevinsten.", "isPhish": true, "why": "Forhåndsbetaling for gevinst = klassisk svindel." },
+    { "id": "eco_2", "prompt": "Ekte faktura fra leverandør i PDF, forventet med korrekt referanse.", "isPhish": false, "why": "Match på ordre/avtale og riktig avsenderdomene." },
+    { "id": "eco_3", "prompt": "E-post: «MVA-refusjon tilgjengelig» fra mva@skatteetn.com", "isPhish": true, "why": "Falskt domene som etterligner myndighet." },
+    { "id": "eco_4", "prompt": "Vipps-forespørsel fra venn for spleiselag du kjenner igjen.", "isPhish": false, "why": "Kjent kontekst og avsender." },
+    { "id": "eco_5", "prompt": "«Betal utestående strømregning i dag» – ukjent beløp og fremmed domene i lenken.", "isPhish": true, "why": "Krever betaling via falsk lenke." },
+    { "id": "eco_6", "prompt": "Ny leverandør ber om å endre kontonummer via e-post.", "isPhish": true, "why": "Endringer av utbetalinger via e-post = høyrisiko (CEO-svindel)." },
+    { "id": "eco_7", "prompt": "Bankens app varsler om ny eFaktura du forventet.", "isPhish": false, "why": "Offisiell app og kontekst stemmer." },
+    { "id": "eco_8", "prompt": "SMS: «Du skylder bompenger» med kortlenke bit.ly/…", "isPhish": true, "why": "Kortlenke + betalingspress fra ukjent avsender." },
+    { "id": "eco_9", "prompt": "E-postkvittering fra nettbutikken der du nettopp handlet.", "isPhish": false, "why": "Forventet kvittering." },
+    { "id": "eco_10", "prompt": "«Vi har dobbel belastning, oppgi kortinfo for refusjon»", "isPhish": true, "why": "Aldri oppgi kortinfo via e-postskjema." }
+  ],
+
+  "kjarlighet": [
+    {
+      "id": "intro_kjarlighet",
+      "prompt": "💞 Kjærlighetssvindel — lær å oppdage emosjonell manipulasjon og bedrag.",
+      "why": "Svindlere bygger tillit før de ber om penger eller sensitiv informasjon."
+    },
+    { "id": "lov_1", "prompt": "«Kjæresten din på nett» ber om penger til akutt nødhjelp.", "isPhish": true, "why": "Romance scam – utnytter følelser og haster." },
+    { "id": "lov_2", "prompt": "Bekjent inviterer til kaffe via vanlig chat – ingen lenker eller pengekrav.", "isPhish": false, "why": "Normal invitasjon uten røde flagg." },
+    { "id": "lov_3", "prompt": "Ny match vil raskt flytte samtalen til WhatsApp og ber om gavekort.", "isPhish": true, "why": "Flytter plattform + ber om verdier." },
+    { "id": "lov_4", "prompt": "Person lover å besøke deg, men ber deg dekke billettkostnader.", "isPhish": true, "why": "Klassisk kjærlighetssvindel." },
+    { "id": "lov_5", "prompt": "Partner du har kjent lenge foreslår videosamtale.", "isPhish": false, "why": "Videosamtale kan verifisere identitet." },
+    { "id": "lov_6", "prompt": "Noen sender bilder og truer med publisering om du ikke betaler.", "isPhish": true, "why": "Sextortion – utpressing." },
+    { "id": "lov_7", "prompt": "Match deler sosiale profiler som virker gamle og konsistente.", "isPhish": false, "why": "Ekte spor kan være positivt (men ikke garanti)." },
+    { "id": "lov_8", "prompt": "Bruker skriver dårlig norsk og ber deg flytte samtalen til e-post.", "isPhish": true, "why": "Mønster for svindel, forsøker å omgå plattform." },
+    { "id": "lov_9", "prompt": "Du blir bedt om å betale verifiseringsgebyr for å «åpne chat».", "isPhish": true, "why": "Gebyr for kommunikasjon = svindel." },
+    { "id": "lov_10", "prompt": "Venn presenterer deg for en person dere begge kjenner fra før.", "isPhish": false, "why": "Kjent felles kontakt og naturlig flyt." }
+  ],
+
+  "passord2fa": [
+    {
+      "id": "intro_passord2fa",
+      "prompt": "🔐 Passord og tofaktor — lær å beskytte kontoene dine.",
+      "why": "Bruk unike passord og del aldri koder fra autentiseringsappen din."
+    },
+    { "id": "pwd_1", "prompt": "E-post: «Send passordet ditt, så får du tilgang igjen».", "isPhish": true, "why": "Aldri del passord via e-post." },
+    { "id": "pwd_2", "prompt": "SMS fra tjenesten du nettopp logget inn på: engangskode 6 sifre.", "isPhish": false, "why": "Forventet 2FA etter egen innlogging." },
+    { "id": "pwd_3", "prompt": "«Din 2FA-kode er 482931» mottatt uten at du forsøkte å logge inn.", "isPhish": true, "why": "Noen andre har trigget koden." },
+    { "id": "pwd_4", "prompt": "Du bruker samme passord til Facebook, Gmail og nettbanken.", "isPhish": true, "why": "Passordgjenbruk er farlig." },
+    { "id": "pwd_5", "prompt": "Du har aktivert tofaktor (app) på e-postkontoen din.", "isPhish": false, "why": "Tydelig sikkerhetsforbedring." },
+    { "id": "pwd_6", "prompt": "Support ber om sikkerhetskodene fra autentiseringsappen din.", "isPhish": true, "why": "Koder skal aldri deles." },
+    { "id": "pwd_7", "prompt": "Du får varsel om innlogging i ny by og velger «Dette var ikke meg».", "isPhish": false, "why": "Riktig reaksjon på mulig kapringsforsøk." },
+    { "id": "pwd_8", "prompt": "E-post: «Bekreft kontoen her» – lenke går til ukjent domene.", "isPhish": true, "why": "Falsk verifisering for å stjele passord." },
+    { "id": "pwd_9", "prompt": "Passordmanager foreslår sterkt, unikt passord for ny tjeneste.", "isPhish": false, "why": "Gode vaner og unik nøkkel per tjeneste." },
+    { "id": "pwd_10", "prompt": "SMS: «Oppgi koden du nettopp mottok» fra ukjent kontakt.", "isPhish": true, "why": "Forsøk på å lure ut 2FA-kode." }
+  ]
+}
